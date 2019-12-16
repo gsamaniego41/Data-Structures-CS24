@@ -117,7 +117,11 @@ class DoublyLinkedList:
     List and inserts it as the new tail node of the List."""
 
     def move_to_end(self, node):
-        pass
+        if node is self.tail:
+            return
+        value = node.value
+        self.delete(value)
+        self.add_to_tail(node)
 
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""
